@@ -38,8 +38,8 @@ window.onload = function() {
 function subtract(el) {
   var x = document.querySelectorAll(".subamt");
   for (i = 0; i < x.length; i++) {
-    if (x[i].getAttribute("id") == el && eval(document.getElementsByClassName("amtinput")[i].getAttribute("value")) > 0) {
-      document.getElementsByClassName("amtinput")[i].setAttribute("value", eval(document.getElementsByClassName("amtinput")[i].getAttribute("value")) - 1);
+    if (x[i].getAttribute("id") == el && eval(document.getElementsByClassName("amtinput")[i].value > 0)) {
+      document.getElementsByClassName("amtinput")[i].value = eval(document.getElementsByClassName("amtinput")[i].value) - 1;
     }
   }
 }
@@ -48,7 +48,7 @@ function add(el) {
   var x = document.querySelectorAll(".addamt");
   for (i = 0; i < x.length; i++) {
     if (x[i].getAttribute("id") == el) {
-      document.getElementsByClassName("amtinput")[i].setAttribute("value", eval(document.getElementsByClassName("amtinput")[i].getAttribute("value")) + 1);
+      document.getElementsByClassName("amtinput")[i].value = eval(document.getElementsByClassName("amtinput")[i].value) + 1;
     }
   }
 }
@@ -97,7 +97,7 @@ function buy() {
       var x = document.querySelectorAll(".amtinput");
       for (i = 0; i < x.length; i++) {
         document.getElementsByClassName("invamt")[i].innerHTML = eval(document.getElementsByClassName("invamt")[i].innerHTML) + eval(x[i].value);
-        x[i].setAttribute("value", 0);
+        x[i].value = 0;
       }
     }
   } else {
