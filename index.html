@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Lemonade</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Uchen&display=swap" rel="stylesheet">
+    <link rel='shortcut icon' type='image/x-icon' href="https://i.imgur.com/WrCqIBd.png">
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+  </head>
+  <body onkeydown="mode(event)">
+    <button id="shortcutkeys" onmouseover="showkeys()" onmouseout="hidekeys()">Shortcut Keys</button>
+    <div id="listkeys">
+      M for action window<br>
+      S for store<br>
+    </div>
+    <div id="store">
+      <p id="title">Store<br>
+      ----------------------------
+      </p>
+      <img class="items" src="https://rb.gy/4yx8sw">
+      <p class="itemcost">$0.15 per cup</p>
+      <input class="amtinput" value="0">
+      <button class="addamt" id="add1">+</button>
+      <button class="subamt" id="sub1">-</button>
+      <p class="itemcost">$0.15 per lemon</p>
+      <img class="items" src="https://i.imgur.com/WrCqIBd.png">
+      <input class="amtinput" value="0">
+      <button class="addamt" id="add2">+</button>
+      <button class="subamt" id="sub2">-</button>
+      <p class="itemcost">$0.15 per cup</p>
+      <img class="items" src="https://i.imgur.com/yAuH9NU.png">
+      <input class="amtinput" value="0">
+      <button class="addamt" id="add3">+</button>
+      <button class="subamt" id="sub3">-</button>
+      <p class="itemcost">$0.15 per sign</p>
+      <img class="items" src="https://i.imgur.com/GgChVaP.png">
+      <input class="amtinput" value="0">
+      <button class="addamt" id="add4">+</button>
+      <button class="subamt" id="sub4">-</button>
+      <button id="buy" onclick="buy()">Buy<img id="shopsvg" src="https://rb.gy/igfoh9"></button>
+      <p id="total">Total: $<span id="totalamt"></span></p>
+    </div>
+    <div id="results">
+
+    </div>
+    <div id="inventory">
+      <div class="invitem"><img class="invpic" src="https://rb.gy/4yx8sw"><span class="invitemtxt">Cups: <span class="invamt">0</span></span></div>
+      <div class="invitem"><img class="invpic" src="https://i.imgur.com/WrCqIBd.png"><span class="invitemtxt">Lemons: <span class="invamt">0</span></span></div>
+      <div class="invitem"><img class="invpic" src="https://i.imgur.com/yAuH9NU.png"><span class="invitemtxt">Sugar: <span class="invamt">0</span></span></div>
+      <div class="invitem"><img class="invpic" src="https://i.imgur.com/GgChVaP.png"><span class="invitemtxt">Ads: <span class="invamt">0</span></span></div>
+      <button title="Click For Inventory" onclick="revealinv()" id="revealinv">&gt</button>
+    </div>
+    <div id="mapcontainer">
+      <p style="font-size: 3vw;color: lightgreen;-webkit-text-stroke: 0.15vmax black;">Sold: <span id="lemonadesold">0</span></p>
+      <p style="font-size: 3vw;color: lightgreen;-webkit-text-stroke: 0.15vmax black;">Weather: <span id="weather">NaN</span></p>
+      <p id="amtperserving">$2.00 per serving</p>
+      <img id="lemonadestand" src="https://i.imgur.com/lGhc3fu.png">
+      <vl id="ground"></vl>
+      <img id="weathercharacter" src="https://i.imgur.com/CUdExXv.png">
+    </div>
+    <div id="balance">Balance: $<span id="balanceamt">6.00</span></div>
+    <button id="startbtn" onclick="start()">Start</button>
+    <script src="script.js"></script>
+  </body>
+</html>
